@@ -1,0 +1,53 @@
+.outer{
+height: 200px;
+width: 500px;
+background-color: rgb(173, 16, 95);
+color: #fff;
+border: 2px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.inner{
+
+    height: 160px;
+    width: 400px;
+    background-color: rgb(6, 67, 110);
+    color: #fff;
+    border: 2px solid black;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+
+    height: 45px;
+    width: 80px;
+    background-color: rgb(52, 140, 14);
+    color: #fff;
+    border: 2px solid black;
+text-align: center;
+margin-right: 20px;
+}
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.clock{
+height: 100px;
+width: 250px;
+background-color: chocolate;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.clock span{
+font-size: 50px;
+color: crimson;
+margin: opx 5px 5px 10px;
+}
+
