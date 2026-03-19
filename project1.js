@@ -209,3 +209,386 @@ function showSlide(n) {
         dots[currentSlideIndex - 1].classList.add('active');
     }
 }
+// Updated Chat Widget Functions
+function startNewConversation() {
+    const chatStartScreen = document.getElementById('chatStartScreen');
+    const chatConversationScreen = document.getElementById('chatConversationScreen');
+    const chatInput = document.getElementById('chatInput');
+    
+    chatStartScreen.style.display = 'none';
+    chatConversationScreen.style.display = 'flex';
+    setTimeout(() => {
+        if (chatInput) chatInput.focus();
+    }, 300);
+}
+
+function goBackToStart() {
+    const chatStartScreen = document.getElementById('chatStartScreen');
+    const chatConversationScreen = document.getElementById('chatConversationScreen');
+    const chatMenuDropdown = document.getElementById('chatMenuDropdown');
+    
+    chatConversationScreen.style.display = 'none';
+    chatStartScreen.style.display = 'flex';
+    if (chatMenuDropdown) {
+        chatMenuDropdown.classList.remove('active');
+    }
+}
+
+function goHome() {
+    const chatWindow = document.getElementById('chatWindow');
+    const chatMenuDropdown = document.getElementById('chatMenuDropdown');
+    
+    chatWindow.classList.remove('active');
+    if (chatMenuDropdown) {
+        chatMenuDropdown.classList.remove('active');
+    }
+}
+
+function toggleChatMenu() {
+    const chatMenuDropdown = document.getElementById('chatMenuDropdown');
+    if (chatMenuDropdown) {
+        chatMenuDropdown.classList.toggle('active');
+    }
+}
+
+// Menu Item Functions
+function changeName() {
+    const newName = prompt('Enter your name:');
+    if (newName) {
+        alert('Name changed to: ' + newName);
+    }
+    toggleChatMenu();
+}
+
+function emailTranscript() {
+    const email = prompt('Enter your email address:');
+    if (email) {
+        alert('Chat transcript will be sent to: ' + email);
+    }
+    toggleChatMenu();
+}
+
+function toggleSound() {
+    alert('Sound notifications toggled');
+    toggleChatMenu();
+}
+
+function popOutWidget() {
+    alert('Chat widget would open in a new window');
+    toggleChatMenu();
+}
+
+function addChatToWebsite() {
+    alert('Chat widget code would be provided for your website');
+    toggleChatMenu();
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+    const chatMenuDropdown = document.getElementById('chatMenuDropdown');
+    const chatMenuBtn = document.querySelector('.chat-menu-btn');
+    
+    if (chatMenuDropdown && chatMenuBtn) {
+        if (!chatMenuDropdown.contains(event.target) && !chatMenuBtn.contains(event.target)) {
+            chatMenuDropdown.classList.remove('active');
+        }
+    }
+});
+// Simple Chat Toggle Test - UPDATED
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, setting up chat - UPDATED VERSION');
+    
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    
+    if (chatToggle && chatWindow) {
+        console.log('Chat elements found - UPDATED');
+        
+        chatToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Chat icon clicked - UPDATED');
+            
+            if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+                chatWindow.style.display = 'flex';
+                console.log('Chat opened - UPDATED');
+            } else {
+                chatWindow.style.display = 'none';
+                console.log('Chat closed - UPDATED');
+            }
+        });
+    } else {
+        console.log('Chat elements not found - UPDATED:', {
+            chatToggle: !!chatToggle,
+            chatWindow: !!chatWindow
+        });
+    }
+});
+
+// Chat Functions - UPDATED WITH FULL FUNCTIONALITY
+function startNewConversation() {
+    console.log('Starting new conversation - UPDATED');
+    document.getElementById('chatStartScreen').style.display = 'none';
+    document.getElementById('chatConversationScreen').style.display = 'flex';
+}
+
+function goBackToStart() {
+    console.log('Going back to start - UPDATED');
+    document.getElementById('chatConversationScreen').style.display = 'none';
+    document.getElementById('chatStartScreen').style.display = 'flex';
+    document.getElementById('chatMenuDropdown').style.display = 'none';
+}
+
+function goHome() {
+    console.log('Going home - UPDATED');
+    document.getElementById('chatWindow').style.display = 'none';
+}
+
+function toggleChatMenu() {
+    console.log('Toggling chat menu - UPDATED');
+    const menu = document.getElementById('chatMenuDropdown');
+    if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+}
+
+// Menu Item Functions with Full Functionality
+function changeName() {
+    console.log('Change Name clicked');
+    toggleChatMenu();
+    document.getElementById('changeNameModal').style.display = 'flex';
+    document.getElementById('nameInput').focus();
+}
+
+function emailTranscript() {
+    console.log('Email transcript clicked');
+    toggleChatMenu();
+    document.getElementById('emailModal').style.display = 'flex';
+    document.getElementById('emailInput').focus();
+}
+
+function toggleSound() {
+    console.log('Sound toggle clicked');
+    toggleChatMenu();
+    document.getElementById('soundModal').style.display = 'flex';
+}
+
+function popOutWidget() {
+    console.log('Pop out widget clicked');
+    toggleChatMenu();
+    document.getElementById('popOutModal').style.display = 'flex';
+}
+
+function addChatToWebsite() {
+    console.log('Add chat to website clicked');
+    toggleChatMenu();
+    document.getElementById('addChatModal').style.display = 'flex';
+}
+
+// Redirect to Tawk.to
+function redirectToTawkTo() {
+    console.log('Redirecting to Tawk.to');
+    
+    // Close modal first
+    closeAddChatModal();
+    
+    // Show loading message
+    const loadingDiv = document.createElement('div');
+    loadingDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 100001;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    `;
+    loadingDiv.innerHTML = `
+        <div style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Redirecting to Tawk.to...</div>
+        <div style="color: #666; font-size: 0.9rem;">Please wait</div>
+    `;
+    document.body.appendChild(loadingDiv);
+    
+    // Redirect after short delay
+    setTimeout(() => {
+        window.open('https://www.tawk.to/?utm_source=tawk-messenger&utm_medium=link&utm_campaign=referral&utm_term=5efb15e09e5f6944229192a3', '_blank');
+        
+        // Remove loading message
+        document.body.removeChild(loadingDiv);
+        
+        // Close chat widget
+        setTimeout(() => {
+            goHome();
+        }, 500);
+    }, 1500);
+}
+
+// Modal Functions
+// Change Name Modal
+function saveNameChange() {
+    const nameInput = document.getElementById('nameInput');
+    const newName = nameInput.value.trim();
+    
+    if (newName) {
+        // Save name to localStorage
+        localStorage.setItem('chatUserName', newName);
+        
+        // Update UI if needed
+        console.log('Name saved:', newName);
+        
+        // Show success message
+        alert('Name changed successfully to: ' + newName);
+        
+        closeChangeNameModal();
+    } else {
+        alert('Please enter a valid name');
+        nameInput.focus();
+    }
+}
+
+function closeChangeNameModal() {
+    document.getElementById('changeNameModal').style.display = 'none';
+    document.getElementById('nameInput').value = '';
+}
+
+// Email Transcript Modal
+function sendEmailTranscript() {
+    const emailInput = document.getElementById('emailInput');
+    const email = emailInput.value.trim();
+    
+    if (email && isValidEmail(email)) {
+        // Simulate sending email
+        console.log('Sending transcript to:', email);
+        
+        // Show loading state
+        const sendBtn = event.target;
+        const originalText = sendBtn.textContent;
+        sendBtn.textContent = 'Sending...';
+        sendBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            alert('Chat transcript has been sent to: ' + email);
+            sendBtn.textContent = originalText;
+            sendBtn.disabled = false;
+            closeEmailModal();
+        }, 2000);
+    } else {
+        alert('Please enter a valid email address');
+        emailInput.focus();
+    }
+}
+
+function closeEmailModal() {
+    document.getElementById('emailModal').style.display = 'none';
+    document.getElementById('emailInput').value = '';
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Sound Settings Modal
+function saveSoundSettings() {
+    const messageSound = document.getElementById('messageSound').checked;
+    const typingSound = document.getElementById('typingSound').checked;
+    const joinSound = document.getElementById('joinSound').checked;
+    
+    // Save settings to localStorage
+    const soundSettings = {
+        messageSound,
+        typingSound,
+        joinSound
+    };
+    
+    localStorage.setItem('chatSoundSettings', JSON.stringify(soundSettings));
+    
+    console.log('Sound settings saved:', soundSettings);
+    alert('Sound settings saved successfully!');
+    
+    closeSoundModal();
+}
+
+function closeSoundModal() {
+    document.getElementById('soundModal').style.display = 'none';
+}
+
+// Pop Out Widget Modal
+function openPopOutWindow() {
+    const popOutWindow = window.open(
+        window.location.href + '?popup=chat',
+        'CarPointChat',
+        'width=400,height=600,scrollbars=no,resizable=yes,status=no,toolbar=no,menubar=no'
+    );
+    
+    if (popOutWindow) {
+        console.log('Pop-out window opened');
+        alert('Chat opened in new window!');
+        closePopOutModal();
+        
+        // Optionally close the current chat
+        goHome();
+    } else {
+        alert('Please allow pop-ups for this website to use this feature');
+    }
+}
+
+function closePopOutModal() {
+    document.getElementById('popOutModal').style.display = 'none';
+}
+
+// Add Chat to Website Modal
+function copyChatCode() {
+    const chatCode = document.getElementById('chatCode');
+    chatCode.select();
+    chatCode.setSelectionRange(0, 99999); // For mobile devices
+    
+    try {
+        document.execCommand('copy');
+        alert('Chat widget code copied to clipboard!');
+    } catch (err) {
+        console.error('Failed to copy code:', err);
+        alert('Failed to copy code. Please select and copy manually.');
+    }
+}
+
+function closeAddChatModal() {
+    document.getElementById('addChatModal').style.display = 'none';
+}
+
+// Load saved settings on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Load saved name
+    const savedName = localStorage.getItem('chatUserName');
+    if (savedName) {
+        console.log('Loaded saved name:', savedName);
+    }
+    
+    // Load saved sound settings
+    const savedSoundSettings = localStorage.getItem('chatSoundSettings');
+    if (savedSoundSettings) {
+        const settings = JSON.parse(savedSoundSettings);
+        document.getElementById('messageSound').checked = settings.messageSound;
+        document.getElementById('typingSound').checked = settings.typingSound;
+        document.getElementById('joinSound').checked = settings.joinSound;
+        console.log('Loaded sound settings:', settings);
+    }
+    
+    // Close modals when clicking outside
+    document.addEventListener('click', function(event) {
+        const modals = ['changeNameModal', 'emailModal', 'soundModal', 'popOutModal', 'addChatModal'];
+        
+        modals.forEach(modalId => {
+            const modal = document.getElementById(modalId);
+            if (modal && event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+});

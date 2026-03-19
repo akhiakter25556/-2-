@@ -18,8 +18,13 @@
 <div class="nav container">
 <!--Menu icon-->
     <i class='bx bx-menu' id="menu-icon"></i>
+    
     <!--Logo-->
-<a href="#" class="logo">Car<span>Point</span></a>
+<a href="#" class="logo">
+<i class='bx bx-car'></i>
+<span class="logo-text">Car<span>Dealer</span></span>
+</a>
+
 <!--Nav list-->
 <ul class="navbar">
 <li><a href="#home" class="active">Home</a></li>
@@ -28,6 +33,7 @@
 <li><a href="#parts">Parts</a></li>
 <li><a href="#blog">Our Blog</a></li>
 </ul>
+
 <!--Right side nav items-->
 <div class="nav-right">
 <!--Search Icon-->
@@ -44,6 +50,7 @@
 <button class="logout-btn" id="logout-btn">Logout</button>
 </div>
 </div>
+
 <!--Search Box-->
 <div class="search-box container">
 <input type="search" name="" id="" placeholder="Search here---">
@@ -527,10 +534,10 @@ Watch Video
 </section>
 
 
-<div class="fullImageBox" id="fullImageBox">
+<!-- <div class="fullImageBox" id="fullImageBox">
     <img src="img/car4.jpeg" alt="" id="fullImag">
     <span id="cross" onclick="closeImg()">x</span>
-           </div> 
+           </div>  -->
        
     
         <div class="container">
@@ -595,103 +602,211 @@ Watch Video
 </div>
 </section>
 
-<!--copy right-->
-<div class="copyright">
-<p>$169; CarpoolVenom All Right Reserved</p>
 
 
-</div>
 
-
-<!--copy right-->
-<div class="copyright">
-<p>$169; CarpoolVenom All Right Reserved</p>
-</div>
 
 <!-- Chat Support Widget -->
-<div class="chat-widget" id="chatWidget">
-<div class="chat-toggle" id="chatToggle">
-<i class='bx bx-message-dots'></i>
-<span class="chat-notification">1</span>
+<div class="chat-widget" id="chatWidget" style="position: fixed; bottom: 40px; right: 25px; z-index: 99999;">
+<div class="chat-toggle" id="chatToggle" style="width: 60px; height: 60px; background: linear-gradient(135deg, #d90429, #b8001f); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(217, 4, 41, 0.4);">
+<i class='bx bx-message-dots' style="font-size: 26px; color: white;"></i>
+<span class="chat-notification" style="position: absolute; top: -6px; right: -6px; background: #ff3742; color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; border: 2px solid white;">1</span>
 </div>
 
-<div class="chat-window" id="chatWindow">
-<!-- Chat Start Screen -->
-<div class="chat-start-screen" id="chatStartScreen">
-<div class="chat-start-content">
-<div class="chat-welcome-text">
-<h1>We are live and ready to chat with you now.</h1>
-<p>Say something to start a live chat.</p>
+<!-- TEST: Simple Chat Window -->
+<div class="chat-window" id="chatWindow" style="position: fixed; bottom: 85px; right: 25px; width: 320px; height: 500px; background: linear-gradient(135deg, #d90429, #b8001f); display: none; flex-direction: column; border-radius: 15px; box-shadow: 0 15px 50px rgba(0,0,0,0.3); z-index: 99998;">
+
+<!-- Start Screen -->
+<div class="chat-start-screen" id="chatStartScreen" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; text-align: center;">
+<div style="max-width: 400px; width: 100%;">
+<div style="margin-bottom: 40px;">
+<h1 style="color: white; font-size: 1.8rem; font-weight: 600; line-height: 1.4; margin-bottom: 15px;">We are live and ready to chat with you now.</h1>
+<p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin: 0;">Say something to start a live chat.</p>
 </div>
 
-<div class="new-conversation-card" onclick="startNewConversation()">
-<div class="conversation-content">
-<h3>New Conversation</h3>
-<p>We typically reply in a few minutes</p>
+<div onclick="startNewConversation()" style="background: white; border-radius: 20px; padding: 25px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-shadow: 0 8px 30px rgba(0,0,0,0.1);">
+<div>
+<h3 style="color: #333; font-size: 1.3rem; font-weight: 600; margin: 0 0 8px 0;">New Conversation</h3>
+<p style="color: #666; font-size: 0.95rem; margin: 0;">We typically reply in a few minutes</p>
 </div>
-<div class="conversation-arrow">
+<div style="color: #d90429; font-size: 24px;">
 <i class='bx bx-right-arrow-alt'></i>
 </div>
 </div>
 </div>
 
 <!-- Bottom Navigation -->
-<div class="chat-bottom-nav">
-<button class="nav-btn home-btn" onclick="goHome()">
-<i class='bx bx-home'></i>
+<div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.1); padding: 20px; display: flex; justify-content: center; gap: 60px;">
+<button onclick="goHome()" style="width: 50px; height: 50px; background: transparent; border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+<i class='bx bx-home' style="font-size: 24px; color: rgba(255,255,255,0.7);"></i>
 </button>
-<button class="nav-btn chat-btn active">
-<i class='bx bx-message'></i>
+<button style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border: none; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+<i class='bx bx-message' style="font-size: 24px; color: white;"></i>
 </button>
 </div>
 </div>
 
-<!-- Chat Conversation Screen -->
-<div class="chat-conversation-screen" id="chatConversationScreen" style="display: none;">
-<div class="chat-header">
-<button class="back-btn" onclick="goBackToStart()">
+<!-- Conversation Screen -->
+<div class="chat-conversation-screen" id="chatConversationScreen" style="flex: 1; display: none; flex-direction: column; background: #f8f9fa;">
+<!-- Header -->
+<div style="background: #d90429; color: white; padding: 15px 20px; display: flex; align-items: center; justify-content: space-between; position: relative;">
+<button onclick="goBackToStart()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 8px;">
 <i class='bx bx-arrow-back'></i>
 </button>
-<div class="chat-agent">
-<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Support Agent">
-<div class="agent-info">
-<h4>Customer Support</h4>
-<span class="status online">Online</span>
-</div>
-</div>
-<button class="chat-menu-btn" onclick="toggleChatMenu()">
+<h4 style="margin: 0; font-size: 1.1rem; font-weight: 600;">Customer Support</h4>
+<button onclick="toggleChatMenu()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer; padding: 8px;">
 <i class='bx bx-menu'></i>
 </button>
+
+<!-- Menu Dropdown -->
+<div id="chatMenuDropdown" style="position: absolute; top: 60px; right: 20px; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 10px 0; min-width: 220px; z-index: 1000; display: none;">
+<div onclick="changeName()" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; cursor: pointer; color: #333;">
+<i class='bx bx-edit' style="font-size: 18px; color: #666;"></i>
+<span style="font-size: 0.95rem;">Change Name</span>
+</div>
+<div onclick="emailTranscript()" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; cursor: pointer; color: #333;">
+<i class='bx bx-envelope' style="font-size: 18px; color: #666;"></i>
+<span style="font-size: 0.95rem;">Email transcript</span>
+</div>
+<div onclick="toggleSound()" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; cursor: pointer; color: #333;">
+<i class='bx bx-volume-full' style="font-size: 18px; color: #666;"></i>
+<span style="font-size: 0.95rem;">Sound On</span>
+</div>
+<div onclick="popOutWidget()" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; cursor: pointer; color: #333;">
+<i class='bx bx-export' style="font-size: 18px; color: #666;"></i>
+<span style="font-size: 0.95rem;">Pop out widget</span>
+</div>
+<div onclick="addChatToWebsite()" style="display: flex; align-items: center; gap: 12px; padding: 12px 20px; cursor: pointer; color: #333;">
+<i class='bx bx-message-square-add' style="font-size: 18px; color: #666;"></i>
+<span style="font-size: 0.95rem;">Add Chat to your website</span>
+</div>
+</div>
 </div>
 
-<div class="chat-messages" id="chatMessages">
-<div class="message agent-message">
-<div class="message-avatar">
-<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=30&h=30&fit=crop&crop=face" alt="Agent">
+<!-- Messages -->
+<div style="flex: 1; padding: 20px; overflow-y: auto; background: #f8f9fa;">
+<div style="text-align: center; margin: 20px 0 15px 0;">
+<span style="background: #e9ecef; color: #666; padding: 6px 12px; border-radius: 12px; font-size: 0.85rem;">Customer Support</span>
 </div>
-<div class="message-content">
-<p>Welcome to our site, if you need help simply reply to this message, we are online and ready to help.</p>
-<span class="message-time">Just now</span>
+<div style="display: flex; gap: 10px; margin-bottom: 20px;">
+<img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Agent" style="width: 40px; height: 40px; border-radius: 50%;">
+<div style="background: #d90429; color: white; padding: 15px 18px; border-radius: 20px; max-width: 85%; border-bottom-left-radius: 6px;">
+<p style="margin: 0; font-size: 0.95rem; line-height: 1.4;">Welcome to our site, if you need help simply reply to this message, we are online and ready to help.</p>
 </div>
 </div>
 </div>
 
-<div class="chat-input-area">
-<div class="chat-input">
-<input type="text" id="chatInput" placeholder="Write a reply...">
-<button class="attachment-btn">
+<!-- Input -->
+<div style="padding: 20px; background: white; border-top: 1px solid #eee;">
+<div style="display: flex; gap: 8px; align-items: center; background: #f8f9fa; border-radius: 25px; padding: 8px 15px; border: 1px solid #e9ecef;">
+<input type="text" placeholder="Write a reply" style="flex: 1; padding: 12px 8px; border: none; background: transparent; font-size: 0.95rem; outline: none; color: #333;">
+<button style="background: none; border: none; color: #666; font-size: 18px; cursor: pointer; padding: 6px;">
 <i class='bx bx-paperclip'></i>
 </button>
-<button class="emoji-btn">
+<button style="background: none; border: none; color: #666; font-size: 18px; cursor: pointer; padding: 6px;">
+<i class='bx bx-link'></i>
+</button>
+<button style="background: none; border: none; color: #666; font-size: 18px; cursor: pointer; padding: 6px;">
 <i class='bx bx-smile'></i>
 </button>
 </div>
 </div>
+</div>
+
 </div>
 </div>
 </div>
 
 <!--link to js-->
 <script src="project1.js"></script>
+
+<!-- Chat Modals/Popups -->
+<!-- Change Name Modal -->
+<div id="changeNameModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100000;">
+<div style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center;">
+<h3 style="margin: 0 0 20px 0; color: #333;">Change Your Name</h3>
+<input type="text" id="nameInput" placeholder="Enter your name" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; margin-bottom: 20px; outline: none;">
+<div style="display: flex; gap: 10px; justify-content: center;">
+<button onclick="saveNameChange()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Save</button>
+<button onclick="closeChangeNameModal()" style="background: #6c757d; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Cancel</button>
+</div>
+</div>
+</div>
+
+<!-- Email Transcript Modal -->
+<div id="emailModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100000;">
+<div style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center;">
+<h3 style="margin: 0 0 20px 0; color: #333;">Email Chat Transcript</h3>
+<input type="email" id="emailInput" placeholder="Enter your email address" style="width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 8px; font-size: 1rem; margin-bottom: 20px; outline: none;">
+<div style="display: flex; gap: 10px; justify-content: center;">
+<button onclick="sendEmailTranscript()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Send</button>
+<button onclick="closeEmailModal()" style="background: #6c757d; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Cancel</button>
+</div>
+</div>
+</div>
+
+<!-- Sound Settings Modal -->
+<div id="soundModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100000;">
+<div style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px;">
+<h3 style="margin: 0 0 20px 0; color: #333; text-align: center;">Sound Settings</h3>
+<div style="margin-bottom: 20px;">
+<label style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px;">
+<input type="checkbox" id="messageSound" checked style="width: 18px; height: 18px;">
+<span>Message notification sound</span>
+</label>
+<label style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px;">
+<input type="checkbox" id="typingSound" checked style="width: 18px; height: 18px;">
+<span>Typing sound</span>
+</label>
+<label style="display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 10px;">
+<input type="checkbox" id="joinSound" checked style="width: 18px; height: 18px;">
+<span>Agent join sound</span>
+</label>
+</div>
+<div style="text-align: center;">
+<button onclick="saveSoundSettings()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem; margin-right: 10px;">Save</button>
+<button onclick="closeSoundModal()" style="background: #6c757d; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Cancel</button>
+</div>
+</div>
+</div>
+
+<!-- Pop Out Widget Modal -->
+<div id="popOutModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100000;">
+<div style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center;">
+<h3 style="margin: 0 0 20px 0; color: #333;">Pop Out Chat</h3>
+<p style="color: #666; margin-bottom: 20px;">Open chat in a new window for better multitasking experience.</p>
+<div style="display: flex; gap: 10px; justify-content: center;">
+<button onclick="openPopOutWindow()" style="background: #d90429; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Open New Window</button>
+<button onclick="closePopOutModal()" style="background: #6c757d; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;">Cancel</button>
+</div>
+</div>
+</div>
+
+<!-- Add Chat to Website Modal -->
+<div id="addChatModal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; align-items: center; justify-content: center; z-index: 100000;">
+<div style="background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px;">
+<h3 style="margin: 0 0 20px 0; color: #333; text-align: center;">Add Chat to Your Website</h3>
+<div style="text-align: center; margin-bottom: 25px;">
+<img src="https://www.tawk.to/wp-content/uploads/2020/08/tawk-logo-small.png" alt="Tawk.to" style="height: 40px; margin-bottom: 15px;">
+<p style="color: #666; margin-bottom: 15px;">Get a free live chat widget for your website with Tawk.to</p>
+<div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+<h4 style="color: #333; margin: 0 0 10px 0;">Features:</h4>
+<ul style="text-align: left; color: #666; margin: 0; padding-left: 20px;">
+<li>✅ Free forever</li>
+<li>✅ Unlimited chats</li>
+<li>✅ Mobile apps</li>
+<li>✅ Visitor monitoring</li>
+<li>✅ File sharing</li>
+<li>✅ Customizable widget</li>
+</ul>
+</div>
+</div>
+<div style="text-align: center;">
+<button onclick="redirectToTawkTo()" style="background: #00d084; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 1rem; margin-right: 10px; font-weight: 600;">Get Started Free</button>
+<button onclick="closeAddChatModal()" style="background: #6c757d; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-size: 1rem;">Maybe Later</button>
+</div>
+</div>
+</div>
+
 </body>
 </html>
